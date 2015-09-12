@@ -63,11 +63,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="geometry.cpp" />
+    <ClCompile Include="potentialFields.cpp" />
     <ClCompile Include="team.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="geometry.h" />
+    <ClInclude Include="potentialFields.h" />
     <ClInclude Include="team.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

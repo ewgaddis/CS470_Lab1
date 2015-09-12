@@ -28,6 +28,7 @@ typedef struct team_t {
 } team_t;
 
 typedef struct obstacle_t {
+	int numCorners;
 	double o_corner[MAX_OBSTACLE_CORNERS][2];
 } obstacle_t;
 
@@ -533,6 +534,7 @@ public:
 				MyObstacle.o_corner[j/2][1]=atof(v.at(j+2).c_str());
 				j=j+2;
 			}
+			MyObstacle.numCorners = j/2;
 			AllObstacles->push_back(MyObstacle);
 			v.clear();
 			v=ReadArr();

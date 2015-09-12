@@ -59,6 +59,11 @@ typedef struct sVector
 		return *this;
 	}
 
+	sVector operator - () const
+	{
+		return sVector(-x, -y);
+	}
+
 	double lengthSq() const
 	{
 		return x * x + y * y;
