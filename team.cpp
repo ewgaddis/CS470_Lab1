@@ -1,4 +1,4 @@
-#include "bot.h"
+#include "team.h"
 
 BZRC *team;
 

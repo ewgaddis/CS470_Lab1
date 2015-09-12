@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_DEPRECATE 1
 #include <iostream>
-#include "bot.h"
+#include "team.h"
 using namespace std;
 
 const char *kDefaultServerName = "localhost";
@@ -43,5 +43,6 @@ int main(int argc, char *argv[]) {
 
 	MyTeam.Close();
 	free(&MyTeam);
+
 	return 0;
 }
