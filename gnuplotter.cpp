@@ -25,12 +25,26 @@ void GNUPlotter::createFile(const char *fileName, const char *title)
 	fprintf(file, "set size square\n");
 }
 
-void GNUPlotter::drawArrow(double x, double y, const Vector &v)
+void GNUPlotter::drawArrow(double x, double y, const Vector &v, int color)
 {
+	if(!file)
+	{
+		return;
+	}
+
+	fprintf(file, "set arrow from %f, %f to %f, %f lt %i\n",
+			x - v.x / 2.0, y - v.y / 2.0,
+			x + v.x / 2.0, y + v.y / 2.0,
+			color);
 }
 
 void GNUPlotter::drawLine(double x1, double y1, double x2, double y2, int color)
 {
+	if(!file)
+	{
+		return;
+	}
+
 	fprintf(file, "set arrow from %f, %f to %f, %f nohead lt %i\n",
 			x1, y1, x2, y2, color);
 }

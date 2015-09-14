@@ -8,10 +8,10 @@
 
 std::vector<Vector> calcRepulsiveForcesFromObstacles(const Vector &pos,
 													 const std::vector<obstacle_t> &obstacles,
-													 double a, double range);
+													 double a, double b, double range);
 
 std::vector<Vector> calcTangentialForcesFromObstacles(const Vector &pos,
 													  const std::vector<obstacle_t> &obstacles,
-													  double a, double range);
+													  double a, double b, double range);
 
 #endif
