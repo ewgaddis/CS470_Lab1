@@ -1,3 +1,6 @@
+#ifndef TEAM_H
+#define TEAM_H
+
 #define WINDOWS
 
 #ifdef WINDOWS
@@ -714,3 +717,5 @@ void world_init(BZRC *my_team);
 void robot_pre_update();
 bool robot_update();
 void robot_post_update();
+
+#endif

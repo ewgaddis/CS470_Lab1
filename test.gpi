@@ -1,0 +1,60 @@
+set title "My Test"
+set xrange [-400.0: 400.0]
+set yrange [-400.0: 400.0]
+unset key
+set size square
+set arrow from 150.000000, 150.000000 to 150.000000, 90.000000 nohead lt 3
+set arrow from 150.000000, 90.000000 to 90.000000, 90.000000 nohead lt 3
+set arrow from 90.000000, 90.000000 to 90.000000, 150.000000 nohead lt 3
+set arrow from 90.000000, 150.000000 to 150.000000, 150.000000 nohead lt 3
+set arrow from 150.000000, 210.000000 to 150.000000, 150.000000 nohead lt 3
+set arrow from 150.000000, 150.000000 to 90.000000, 150.000000 nohead lt 3
+set arrow from 90.000000, 150.000000 to 90.000000, 210.000000 nohead lt 3
+set arrow from 90.000000, 210.000000 to 150.000000, 210.000000 nohead lt 3
+set arrow from 210.000000, 150.000000 to 210.000000, 90.000000 nohead lt 3
+set arrow from 210.000000, 90.000000 to 150.000000, 90.000000 nohead lt 3
+set arrow from 150.000000, 90.000000 to 150.000000, 150.000000 nohead lt 3
+set arrow from 150.000000, 150.000000 to 210.000000, 150.000000 nohead lt 3
+set arrow from 150.000000, -90.000000 to 150.000000, -150.000000 nohead lt 3
+set arrow from 150.000000, -150.000000 to 90.000000, -150.000000 nohead lt 3
+set arrow from 90.000000, -150.000000 to 90.000000, -90.000000 nohead lt 3
+set arrow from 90.000000, -90.000000 to 150.000000, -90.000000 nohead lt 3
+set arrow from 210.000000, -90.000000 to 210.000000, -150.000000 nohead lt 3
+set arrow from 210.000000, -150.000000 to 150.000000, -150.000000 nohead lt 3
+set arrow from 150.000000, -150.000000 to 150.000000, -90.000000 nohead lt 3
+set arrow from 150.000000, -90.000000 to 210.000000, -90.000000 nohead lt 3
+set arrow from 150.000000, -150.000000 to 150.000000, -210.000000 nohead lt 3
+set arrow from 150.000000, -210.000000 to 90.000000, -210.000000 nohead lt 3
+set arrow from 90.000000, -210.000000 to 90.000000, -150.000000 nohead lt 3
+set arrow from 90.000000, -150.000000 to 150.000000, -150.000000 nohead lt 3
+set arrow from -90.000000, -90.000000 to -90.000000, -150.000000 nohead lt 3
+set arrow from -90.000000, -150.000000 to -150.000000, -150.000000 nohead lt 3
+set arrow from -150.000000, -150.000000 to -150.000000, -90.000000 nohead lt 3
+set arrow from -150.000000, -90.000000 to -90.000000, -90.000000 nohead lt 3
+set arrow from -90.000000, -150.000000 to -90.000000, -210.000000 nohead lt 3
+set arrow from -90.000000, -210.000000 to -150.000000, -210.000000 nohead lt 3
+set arrow from -150.000000, -210.000000 to -150.000000, -150.000000 nohead lt 3
+set arrow from -150.000000, -150.000000 to -90.000000, -150.000000 nohead lt 3
+set arrow from -150.000000, -90.000000 to -150.000000, -150.000000 nohead lt 3
+set arrow from -150.000000, -150.000000 to -210.000000, -150.000000 nohead lt 3
+set arrow from -210.000000, -150.000000 to -210.000000, -90.000000 nohead lt 3
+set arrow from -210.000000, -90.000000 to -150.000000, -90.000000 nohead lt 3
+set arrow from -90.000000, 150.000000 to -90.000000, 90.000000 nohead lt 3
+set arrow from -90.000000, 90.000000 to -150.000000, 90.000000 nohead lt 3
+set arrow from -150.000000, 90.000000 to -150.000000, 150.000000 nohead lt 3
+set arrow from -150.000000, 150.000000 to -90.000000, 150.000000 nohead lt 3
+set arrow from -90.000000, 210.000000 to -90.000000, 150.000000 nohead lt 3
+set arrow from -90.000000, 150.000000 to -150.000000, 150.000000 nohead lt 3
+set arrow from -150.000000, 150.000000 to -150.000000, 210.000000 nohead lt 3
+set arrow from -150.000000, 210.000000 to -90.000000, 210.000000 nohead lt 3
+set arrow from -150.000000, 150.000000 to -150.000000, 90.000000 nohead lt 3
+set arrow from -150.000000, 90.000000 to -210.000000, 90.000000 nohead lt 3
+set arrow from -210.000000, 90.000000 to -210.000000, 150.000000 nohead lt 3
+set arrow from -210.000000, 150.000000 to -150.000000, 150.000000 nohead lt 3
+set arrow from 10.000000, 60.000000 to 10.000000, -60.000000 nohead lt 3
+set arrow from 10.000000, -60.000000 to -10.000000, -60.000000 nohead lt 3
+set arrow from -10.000000, -60.000000 to -10.000000, 60.000000 nohead lt 3
+set arrow from -10.000000, 60.000000 to 10.000000, 60.000000 nohead lt 3
+plot '-' with lines
+0 0 0 0
+e

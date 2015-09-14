@@ -27,6 +27,9 @@
     <ClCompile Include="potentialFields.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gnuplotter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="team.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="potentialFields.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gnuplotter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

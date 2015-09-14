@@ -4,7 +4,7 @@
 using namespace std;
 
 const char *kDefaultServerName = "localhost";
-const int kDefaultServerPort = 51228;
+const int kDefaultServerPort = 63575;
 
 int main(int argc, char *argv[]) {
 	const char *pcHost;
@@ -42,7 +42,6 @@ int main(int argc, char *argv[]) {
 	}
 
 	MyTeam.Close();
-	free(&MyTeam);
 
 	return 0;
 }

@@ -1,5 +1,11 @@
 #include "team.h"
 
+#include "gnuplotter.h"
+
+#include <vector>
+
+using namespace std;
+
 BZRC *team;
 
 void world_init(BZRC *my_team)
@@ -13,18 +19,17 @@ void robot_pre_update()
 
 bool robot_update()
 {
-	static int counter = 0;
+	GNUPlotter plotter;
 
-	team->shoot(0);
-	Sleep(500);
+	plotter.createFile("./test.gpi", "My Test");
 
-	++counter;
-	if(counter > 30)
-	{
-		return false;
-	}
+	vector<obstacle_t> obstacles;
+	team->get_obstacles(&obstacles);
+	plotter.drawObstacles(obstacles);
 
-	return true;
+	plotter.finishFile();
+
+	return false;
 }
 
 void robot_post_update()
