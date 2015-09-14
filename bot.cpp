@@ -15,6 +15,15 @@ bool robot_update()
 {
 	static int counter = 0;
 
+	team->speed(0, 1);
+	Sleep(1000);
+	team->shoot(0);
+	Sleep(500);
+	team->speed(0, -.5);
+	Sleep(500);
+	team->angvel(0, .5);
+	Sleep(100);
+	team->angvel(0, 0);
 	team->shoot(0);
 	Sleep(500);
 
