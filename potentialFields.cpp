@@ -1,5 +1,7 @@
 #include "potentialFields.h"
 
+#include "gnuplotter.h"
+
 using namespace std;
 
 void getMinDistV(const obstacle_t *obstacle,
@@ -41,6 +43,27 @@ void getMinDistV(const obstacle_t *obstacle,
 
 	*v    = minV;
 	*dist = minDist;
+}
+
+Vector calcAttractiveForceToGoal(const Vector &pos, const Vector &goal,
+								 double a, double max, double range)
+{
+	Vector force(goal.x - pos.x, goal.y - pos.y);
+
+	force *= a;
+
+	double forceLenSq = force.lengthSq();
+
+	if(forceLenSq < range * range)
+	{
+		return Vector(0.0, 0.0);
+	}
+	else if(forceLenSq > max * max)
+	{
+		force *= max / sqrt(forceLenSq);
+	}
+
+	return force;
 }
 
 vector<Vector> calcRepulsiveForcesFromObstacles(const Vector &pos,
@@ -137,4 +160,56 @@ vector<Vector> calcTangentialForcesFromObstacles(const Vector &pos,
 	}
 
 	return forces;
+}
+
+void drawPotentialField(GNUPlotter &plotter, void *ptr,
+						int numSamples, int potentialField,
+						double p1, double p2, double p3)
+{
+	int d = 800 / numSamples;
+
+	for(int x = -400; x <= 400; x += d)
+	{
+		for(int y = -400; y <= 400; y += d)
+		{
+			Vector pos(x, y);
+			vector<Vector> forces;
+
+			switch(potentialField)
+			{
+			case 0:
+				forces.push_back(calcAttractiveForceToGoal(pos, *(Vector *)ptr,
+														   p1, p2, p3));
+				break;
+
+			case 1:
+				forces = calcRepulsiveForcesFromObstacles(pos, *(vector<obstacle_t>*)ptr,
+														  p1, p2, p3);
+				break;
+
+			case 2:
+				forces = calcTangentialForcesFromObstacles(pos, *(vector<obstacle_t>*)ptr,
+														   p1, p2, p3);
+				break;
+			}
+
+			Vector netForce;
+
+			vector<Vector>::iterator itForce = forces.begin();
+			while(itForce != forces.end())
+			{
+				Vector force = (*itForce);
+
+				netForce += force;
+				++itForce;
+			}
+
+			if(netForce.lengthSq() < 1.0)
+			{
+				netForce.normalize();
+			}
+
+			plotter.drawArrow(pos.x, pos.y, netForce, 1);
+		}
+	}
 }
