@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_DEPRECATE 1
 #include <iostream>
+#include <conio.h>
 #include "team.h"
 using namespace std;
 
@@ -23,9 +24,13 @@ int main(int argc, char *argv[]) {
         nPort = atoi(argv[2]);
     }
 
+	cout << "Host: " << pcHost << endl;
+	cout << "Port: " << nPort << endl;
+
 	BZRC MyTeam = BZRC(pcHost, nPort, false);
 	if(!MyTeam.GetStatus()) {
 		cout << "Can't connect to BZRC server." << endl;
+		while(!_kbhit());
 		exit(1);
 	}
 

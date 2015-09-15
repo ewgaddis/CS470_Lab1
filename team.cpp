@@ -4,6 +4,7 @@
 #include "potentialFields.h"
 
 #include <vector>
+#include <conio.h>
 
 using namespace std;
 
@@ -32,41 +33,18 @@ bool robot_update()
 	team->get_obstacles(&obstacles);
 	plotter.drawObstacles(obstacles);
 
+	vector<flag_t> flags;
+	team->get_flags(&flags);
+
 	cout << "Plotting potential field..." << endl;
 
-	int samples = 50;
-	int d = 800 / samples;
-
-	for(int x = -400; x <= 400; x += d)
-	{
-		for(int y = -400; y <= 400; y += d)
-		{
-			Vector pos(x, y);
-
-			//vector<Vector> forces = calcRepulsiveForcesFromObstacles(pos, obstacles, 100.0, 0.0, 75.0);
-			vector<Vector> forces = calcTangentialForcesFromObstacles(pos, obstacles, 100.0, 5.0, 75.0);
-
-			Vector netForce;
-
-			vector<Vector>::iterator itForce = forces.begin();
-			while(itForce != forces.end())
-			{
-				Vector force = (*itForce);
-
-				netForce += force;
-				++itForce;
-			}
-
-			if(netForce.lengthSq() < 1.0)
-			{
-				netForce.normalize();
-			}
-
-			plotter.drawArrow(pos.x, pos.y, netForce, 1);
-		}
-	}
+	Vector goal(flags.at(0).pos[0], flags.at(0).pos[1]);
+	drawPotentialField(plotter, (void*)&goal, 25, 0,
+					   0.25, 25.0, 1.0);
 
 	plotter.finishFile();
+
+	team->angvel(0, 1.0);
 
 	return false;
 }
