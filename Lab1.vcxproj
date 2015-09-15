@@ -62,11 +62,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="bot.cpp" />
+    <ClCompile Include="geometry.cpp" />
+    <ClCompile Include="gnuplotter.cpp" />
+    <ClCompile Include="potentialFields.cpp" />
+    <ClCompile Include="team.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bot.h" />
+    <ClInclude Include="geometry.h" />
+    <ClInclude Include="gnuplotter.h" />
+    <ClInclude Include="potentialFields.h" />
+    <ClInclude Include="team.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

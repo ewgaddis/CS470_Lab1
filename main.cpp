@@ -1,10 +1,10 @@
 #define _CRT_SECURE_NO_DEPRECATE 1
 #include <iostream>
-#include "bot.h"
+#include "team.h"
 using namespace std;
 
 const char *kDefaultServerName = "localhost";
-const int kDefaultServerPort = 51228;
+const int kDefaultServerPort = 52573;
 
 int main(int argc, char *argv[]) {
 	const char *pcHost;
@@ -42,6 +42,6 @@ int main(int argc, char *argv[]) {
 	}
 
 	MyTeam.Close();
-	free(&MyTeam);
+
 	return 0;
 }
