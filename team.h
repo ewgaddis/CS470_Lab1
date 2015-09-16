@@ -28,8 +28,12 @@ const int kBufferSize = 1024;
 typedef struct team_t {
 	string color;
 	int count;
-	double base_corner[4][2];
 } team_t;
+
+typedef struct base_t {
+	string color;
+	double corner[4][2];
+} base_t;
 
 typedef struct obstacle_t {
 	int numCorners;
@@ -88,7 +92,10 @@ public:
 		size_t LastLoc = -1;
 		size_t CurLoc = MyString.find(" ", 0);
 		while (CurLoc != string::npos) {
-			MyVector.push_back(MyString.substr(LastLoc+1, CurLoc-LastLoc-1));
+			if(MyString.substr(LastLoc+1, CurLoc-LastLoc-1).length() > 0)
+			{
+				MyVector.push_back(MyString.substr(LastLoc+1, CurLoc-LastLoc-1));
+			}
 			LastLoc=CurLoc;
 			CurLoc = MyString.find(" ", LastLoc+1);
 		}
@@ -333,11 +340,11 @@ class BZRC {
 		char *LineText=str;
 		ReadLine(LineText);
 		if(strlen(LineText)!=0) {
-			if(debug) cout << LineText << endl;
+			cout << LineText << endl;
 		}
 		while(strlen(LineText)==0) {
 			ReadLine(LineText);
-			if(debug) cout << LineText << endl;
+			cout << LineText << endl;
 		}
 		SplitString ss=SplitString(LineText);
 		return ss.Split();
@@ -500,15 +507,38 @@ public:
 			team_t MyTeam;
 			MyTeam.color=v.at(1);
 			MyTeam.count=atoi(v.at(2).c_str());
-			MyTeam.base_corner[0][0]=atof(v.at(3).c_str());
-			MyTeam.base_corner[0][1]=atof(v.at(4).c_str());
-			MyTeam.base_corner[1][0]=atof(v.at(5).c_str());
-			MyTeam.base_corner[1][1]=atof(v.at(6).c_str());
-			MyTeam.base_corner[2][0]=atof(v.at(7).c_str());
-			MyTeam.base_corner[2][1]=atof(v.at(8).c_str());
-			MyTeam.base_corner[3][0]=atof(v.at(9).c_str());
-			MyTeam.base_corner[3][1]=atof(v.at(10).c_str());
 			AllTeams->push_back(MyTeam);
+			v.clear();
+			v=ReadArr();
+			i++;
+		}
+		if(v.at(0)!="end") {
+			return false;
+		}
+		return true;
+	}
+
+	bool get_bases(vector <base_t> *AllBases) {
+		//Request a list of bases.
+		SendLine("bases");
+		ReadAck();
+		vector <string> v=ReadArr();
+		if(v.at(0)!="begin") {
+			return false;
+		}
+		v.clear();
+		v=ReadArr();
+		int i=0;
+		while(v.at(0)=="base") {
+			base_t MyBase;
+			MyBase.color=v.at(1);
+			int j=1;
+			while(j+2<(int)v.size()) {
+				MyBase.corner[j/2][0]=atof(v.at(j+1).c_str());
+				MyBase.corner[j/2][1]=atof(v.at(j+2).c_str());
+				j=j+2;
+			}
+			AllBases->push_back(MyBase);
 			v.clear();
 			v=ReadArr();
 			i++;
