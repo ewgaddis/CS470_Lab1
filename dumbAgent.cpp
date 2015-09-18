@@ -6,8 +6,8 @@ DumbAgent::DumbAgent(BZRC* team,int index){
 }
 
 void DumbAgent::Update(){
-	//int driveTime = rand() % 8000 + 3000;
-	int driveTime = 2000;
+	int driveTime = rand() % 8000 + 3000;
+	//int driveTime = 2000;
 
 	myTeam->speed(botIndex, 1);
 	while (driveTime > 0){
