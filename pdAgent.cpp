@@ -40,7 +40,7 @@ PDAgent::PDAgent(BZRC* team, int index){
 
 }
 
-void PDAgent::Update(){
+void PDAgent::Update(string color){
 	Vector newDirection = Vector();
 	vector <tank_t> myTanks;
 	vector <obstacle_t> myObst;
@@ -54,7 +54,7 @@ void PDAgent::Update(){
 
 	if (myTanks[botIndex].flag.compare("-") == 0){
 		int i = 0;
-		while (goal.color != "red")
+		while (goal.color != color)//"red")
 		{
 			goal = allFlags[++i];
 		}
@@ -114,7 +114,7 @@ void PDAgent::Update(){
 			myTeam->angvel(botIndex, -newVel);
 		}
 	}
-	double s = (newDirection.length() + (-100 * avgVel.length())) / 20.0;
+	double s = (newDirection.length() / 20);// +(-100 * avgVel.length())) / 20.0;
 	if (s < 0.0)
 		s = 0.0;
 	myTeam->speed(botIndex, s);

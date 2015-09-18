@@ -12,7 +12,7 @@ class PDAgent {
 	double oldAngle;
 public: PDAgent(BZRC* team, int index);
 
-		void Update();
+		void Update(string color);
 private:
 	boolean isInBase(base_t* base, flag_t* flag);
 	void setBaseCenter(base_t* base);
