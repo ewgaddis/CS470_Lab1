@@ -5,13 +5,15 @@ class PDAgent {
 	BZRC* myTeam;
 	int botIndex;
 	Vector* curVector;
-	team_t* colorBase;
+	Vector oldVector;
+	base_t* colorBase;
 	string color;
 	Vector* baseCenter;
+	double oldAngle;
 public: PDAgent(BZRC* team, int index);
 
-		void Update();
+		void Update(string color);
 private:
-	boolean isInBase(team_t* team, flag_t* flag);
-	void setBaseCenter();
+	boolean isInBase(base_t* base, flag_t* flag);
+	void setBaseCenter(base_t* base);
 };

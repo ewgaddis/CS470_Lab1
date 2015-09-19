@@ -340,11 +340,11 @@ class BZRC {
 		char *LineText=str;
 		ReadLine(LineText);
 		if(strlen(LineText)!=0) {
-			cout << LineText << endl;
+			if(debug) cout << LineText << endl;
 		}
 		while(strlen(LineText)==0) {
 			ReadLine(LineText);
-			cout << LineText << endl;
+			if(debug) cout << LineText << endl;
 		}
 		SplitString ss=SplitString(LineText);
 		return ss.Split();

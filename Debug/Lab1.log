@@ -1,26 +1,44 @@
+<<<<<<< HEAD
 ﻿Build started 9/17/2015 4:57:14 PM.
      1>Project "C:\Users\Eli\Documents\Computer Programs\CS470\Lab1\Lab1.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Lab1.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt team.cpp
+=======
+﻿Build started 9/18/2015 3:16:07 PM.
+     1>Project "C:\Users\Renae\Documents\Visual Studio 2013\Projects\Lab1\Lab1.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt pdAgent.cpp team.cpp
+>>>>>>> 21f28c2abe135135d2e50c63c4c38126be94caa8
          team.cpp
+     1>c:\users\renae\documents\visual studio 2013\projects\lab1\team.h(206): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1850) : see declaration of 'inet_addr'
+     1>c:\users\renae\documents\visual studio 2013\projects\lab1\team.h(209): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(2238) : see declaration of 'gethostbyname'
+     1>c:\users\renae\documents\visual studio 2013\projects\lab1\team.cpp(47): warning C4018: '<' : signed/unsigned mismatch
+         pdAgent.cpp
+     1>c:\users\renae\documents\visual studio 2013\projects\lab1\team.h(206): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1850) : see declaration of 'inet_addr'
+     1>c:\users\renae\documents\visual studio 2013\projects\lab1\team.h(209): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(2238) : see declaration of 'gethostbyname'
+         Generating Code...
        Link:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Eli\Documents\Computer Programs\CS470\Debug\Lab1.exe" /NOLOGO WS2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Lab1.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Eli\Documents\Computer Programs\CS470\Debug\Lab1.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Eli\Documents\Computer Programs\CS470\Debug\Lab1.lib" /MACHINE:X86 Debug\geometry.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Renae\Documents\Visual Studio 2013\Projects\Lab1\Debug\Lab1.exe" /INCREMENTAL /NOLOGO WS2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Renae\Documents\Visual Studio 2013\Projects\Lab1\Debug\Lab1.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Renae\Documents\Visual Studio 2013\Projects\Lab1\Debug\Lab1.lib" /MACHINE:X86 Debug\geometry.obj
          Debug\gnuplotter.obj
          Debug\pdAgent.obj
          Debug\potentialFields.obj
+         Debug\dumbAgent.obj
+         Debug\pdAgent.obj
          Debug\team.obj
          Debug\main.obj
-         LINK : C:\Users\Eli\Documents\Computer Programs\CS470\Debug\Lab1.exe not found or not built by the last incremental link; performing full link
-         Lab1.vcxproj -> C:\Users\Eli\Documents\Computer Programs\CS470\Debug\Lab1.exe
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Eli\Documents\Computer Programs\CS470\Debug\Lab1.exe;#1" /manifest Debug\Lab1.exe.intermediate.manifest
-       FinalizeBuildStatus:
-         Deleting file "Debug\Lab1.unsuccessfulbuild".
-         Touching "Debug\Lab1.lastbuildstate".
-     1>Done Building Project "C:\Users\Eli\Documents\Computer Programs\CS470\Lab1\Lab1.vcxproj" (build target(s)).
+         Lab1.vcxproj -> C:\Users\Renae\Documents\Visual Studio 2013\Projects\Lab1\Debug\Lab1.exe
+     1>Done Building Project "C:\Users\Renae\Documents\Visual Studio 2013\Projects\Lab1\Lab1.vcxproj" (Build target(s)).
 
 Build succeeded.
 
+<<<<<<< HEAD
 Time Elapsed 00:00:01.61
+=======
+Time Elapsed 00:00:07.76
+>>>>>>> 21f28c2abe135135d2e50c63c4c38126be94caa8
