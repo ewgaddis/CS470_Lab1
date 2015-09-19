@@ -1,4 +1,4 @@
-﻿Build started 9/14/2015 8:44:10 PM.
+﻿Build started 9/17/2015 4:57:14 PM.
      1>Project "C:\Users\Eli\Documents\Computer Programs\CS470\Lab1\Lab1.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Lab1.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -8,6 +8,7 @@
        Link:
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Eli\Documents\Computer Programs\CS470\Debug\Lab1.exe" /NOLOGO WS2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Lab1.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Eli\Documents\Computer Programs\CS470\Debug\Lab1.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Eli\Documents\Computer Programs\CS470\Debug\Lab1.lib" /MACHINE:X86 Debug\geometry.obj
          Debug\gnuplotter.obj
+         Debug\pdAgent.obj
          Debug\potentialFields.obj
          Debug\team.obj
          Debug\main.obj
@@ -22,4 +23,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.62
+Time Elapsed 00:00:01.61
